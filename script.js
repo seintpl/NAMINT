@@ -1,7 +1,7 @@
 function addname(value) {
-  all += '<tr><td style="width: 40%;">' + value + '</td><td><a href=\'https://www.google.pl/search?q="' + value + '"\' target=_blank>Google</a></td><td><a href=\'https://www.bing.com/search?q="' + value + '"\' target=_blank>Bing</a></td><td><a href=\'https://yandex.com/search/?text="' + value + '"\' target=_blank>Yandex</a></td><td><a href=\'https://www.facebook.com/public/' + value + '\' target=_blank>Facebook</a></td><td><a href=\'https://twitter.com/search?q=' + value + '&src=typed_query&f=user\' target=_blank>Twitter</a></td><td>';
+  all += '<tr><td style="width: 40%;">' + value + '</td><td><a href=\'https://www.google.pl/search?q="' + value + '"\' target=_blank>Google</a></td><td><a href=\'https://www.bing.com/search?q="' + value + '"\' target=_blank>Bing</a></td><td><a href=\'https://yandex.com/search/?text="' + value + '"\' target=_blank>Yandex</a></td><td><a href=\'https://www.facebook.com/public/' + value + '\' target=_blank><i class="bi-facebook"></i></a></td><td><a href=\'https://twitter.com/search?q=' + value + '&src=typed_query&f=user\' target=_blank><i class="bi-twitter"></i></a></td><td>';
   if (linum==0) {
-    all += '<a href=\'https://www.linkedin.com/pub/dir?firstName=' + f + '&lastName=' + l + '&src=typed_query&f=user\' target=_blank>LinkedIn</a>';
+    all += '<a href=\'https://www.linkedin.com/pub/dir?firstName=' + f + '&lastName=' + l + '&src=typed_query&f=user\' target=_blank><i class="bi-linkedin"></i></a>';
     linum++;
   }
   all += '</td></tr>';
@@ -13,7 +13,7 @@ function forname(value) {
 }
 
 function addlogin(value) {
-  all += '<tr><td style="width: 40%;">' + value + '</td><td><a href=\'https://www.google.pl/search?q="' + value + '"\' target=_blank>Google</a></td><td><a href=\'https://www.bing.com/search?q="' + value + '"\' target=_blank>Bing</a></td><td><a href=\'https://yandex.com/search/?text="' + value + '"\' target=_blank>Yandex</a></td><td><a href=\'https://www.google.pl/search?q="' + value + '@gmail.com"+OR+"' + value + '@outlook.com"+OR+"' + value + '@icloud.com"+OR+"' + value + '@yahoo.com"+OR+"' + value + '@protonmail.com"\' target=_blank>Google common emails</a></td><td><a href=\'https://www.facebook.com/' + value + '\' target=_blank>Facebook profile name</a></td><td><a href=\'https://twitter.com/' + value + '\' target=_blank>Twitter handle</a></td></tr>';
+  all += '<tr><td style="width: 40%;">' + value + '</td><td><a href=\'https://www.google.pl/search?q="' + value + '"\' target=_blank>Google</a></td><td><a href=\'https://www.bing.com/search?q="' + value + '"\' target=_blank>Bing</a></td><td><a href=\'https://yandex.com/search/?text="' + value + '"\' target=_blank>Yandex</a></td><td><a href=\'https://www.google.pl/search?q="' + value + '@gmail.com"+OR+"' + value + '@outlook.com"+OR+"' + value + '@icloud.com"+OR+"' + value + '@yahoo.com"+OR+"' + value + '@protonmail.com"\' target=_blank><i class="bi-google"></i> common emails</a></td><td><a href=\'https://www.facebook.com/' + value + '\' target=_blank><i class="bi-facebook"></i></a></td><td><a href=\'https://twitter.com/' + value + '\' target=_blank><i class="bi-twitter"></i></a></td><td><a href=\'https://instagram.com/' + value + '\' target=_blank><i class="bi-instagram"></i></a></td><td><a href=\'https://whatsmyname.app/?q=' + value + '\' target=_blank>whatsmyname</a></td></tr>';
 }
 
 function openallfb(a) {
@@ -54,11 +54,11 @@ function mashup() {
       q.forEach(addname);
       q.forEach(forname);
     }
-    all += '<tr><td style="width: 40%; font-weight: bold;">ALL <span title="For FB / Twitter links to work properly, allow this site to open new tabs / windows"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg></span></td><td><a href=\'https://www.google.pl/search?q=' + orname + '\' target=_blank>Google</a></td><td><a href=\'https://www.bing.com/search?q=' + orname + '\' target=_blank>Bing</a></td><td><a href=\'https://yandex.com/search/?text=' + orname + '\' target=_blank>Yandex</a></td><td><a href=# onclick="';
+    all += '<tr><td style="width: 40%; font-weight: bold;">ALL <span title="For FB / Twitter links to work properly, allow this site to open new tabs / windows"><i class="bi-info-circle"></i></span></td><td><a href=\'https://www.google.pl/search?q=' + orname + '\' target=_blank>Google</a></td><td><a href=\'https://www.bing.com/search?q=' + orname + '\' target=_blank>Bing</a></td><td><a href=\'https://yandex.com/search/?text=' + orname + '\' target=_blank>Yandex</a></td><td><a href=# onclick="';
     p.forEach(openallfb);    
-    all += '">Facebook</a></td><td><a href=# onclick="';
+    all += '"><i class="bi-facebook"></i></a></td><td><a href=# onclick="';
     p.forEach(openalltw);
-    all += '">Twitter</a></td></tr>';
+    all += '"><i class="bi-twitter"></i></a></td></tr>';
     all += '</table></div><div style="padding-top: 10px; font-weight:bold;">Possible login patterns and search links:</div><div style="border: 1px solid #ddd;"><table class="table">';
     r[1] = f.toLowerCase() + '.' + l.toLowerCase();
     r[2] = l.toLowerCase() + '.' + f.toLowerCase();
