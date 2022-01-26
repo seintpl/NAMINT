@@ -13,7 +13,14 @@ function forname(value) {
 }
 
 function addlogin(value) {
-  all += '<tr><td style="width: 40%;">' + value + '</td><td><a href=\'https://www.google.pl/search?q="' + value + '"\' target=_blank>Google</a></td><td><a href=\'https://www.bing.com/search?q="' + value + '"\' target=_blank>Bing</a></td><td><a href=\'https://yandex.com/search/?text="' + value + '"\' target=_blank>Yandex</a></td><td><a href=\'https://www.google.pl/search?q="' + value + '@gmail.com"+OR+"' + value + '@outlook.com"+OR+"' + value + '@icloud.com"+OR+"' + value + '@yahoo.com"+OR+"' + value + '@protonmail.com"\' target=_blank><i class="bi-google"></i> common emails</a></td><td><a href=\'https://www.facebook.com/' + value + '\' target=_blank><i class="bi-facebook"></i></a></td><td><a href=\'https://twitter.com/' + value + '\' target=_blank><i class="bi-twitter"></i></a></td><td><a href=\'https://instagram.com/' + value + '\' target=_blank><i class="bi-instagram"></i></a></td><td><a href=\'https://whatsmyname.app/?q=' + value + '\' target=_blank>whatsmyname</a></td></tr>';
+  all += '<tr><td style="width: 40%;">' + value + '</td><td><a href=\'https://www.google.pl/search?q="' + value + '"\' target=_blank>Google</a></td><td><a href=\'https://www.bing.com/search?q="' + value + '"\' target=_blank>Bing</a></td><td><a href=\'https://yandex.com/search/?text="' + value + '"\' target=_blank>Yandex</a></td><td><a href=\'https://www.google.pl/search?q="' + value + '@gmail.com"+OR+"' + value + '@outlook.com"+OR+"' + value + '@icloud.com"+OR+"' + value + '@yahoo.com"+OR+"' + value + '@protonmail.com"\' target=_blank><i class="bi-google"></i> common emails</a></td><td><a href=\'https://www.facebook.com/' + value + '\' target=_blank><i class="bi-facebook"></i></a></td><td><a href=\'https://twitter.com/' + value + '\' target=_blank><i class="bi-twitter"></i></a></td><td><a href=\'https://instagram.com/' + value + '\' target=_blank><i class="bi-instagram"></i></a></td><td><a href=\'https://www.tiktok.com/@' + value + '\' target=_blank><i class="bi-tiktok"></i></a></td><td><a href=\'https://whatsmyname.app/?q=' + value + '\' target=_blank>whatsmyname</a></td></tr>';
+  vg = value + '@gmail.com';
+  vo = value + '@outlook.com';
+  vi = value + '@icloud.com';
+  vy = value + '@yahoo.com';
+  vh = value + '@hotmail.com';
+  vm = value + '@msn.com';
+  grall += '<tr><td style="width: 40%;">' + value + '</td><td><img src="https://s.gravatar.com/avatar/' + md5(vg) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vo) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vi) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vy) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vh) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vm) + '"></td></tr>';
 }
 
 function openallfb(a) {
@@ -31,6 +38,7 @@ function mashup() {
   if (f==''||l=='') {document.getElementById("namint_result").innerHTML = '<div style="padding-top: 10px; font-weight:bold;">Enter at least first and last name above.</div>';}
   else {
     all = '<div style="padding-top: 10px; font-weight:bold;">Possible name patterns and search links:</div><div style="border: 1px solid #ddd;"><table class="table">';
+    grall = '<tr><td>@</td><td>gmail.com</td><td>outlook.com</td><td>icloud.com</td><td>yahoo.com</td><td>hotmail.com</td><td>msn.com</td></tr>';
     orname = '';
     ornum = 0;
     linum = 0;
@@ -79,6 +87,8 @@ function mashup() {
       s[6] = l.toLowerCase() + m.toLowerCase();
       s.forEach(addlogin);
     }  
+    all += '</table></div><div style="padding-top: 10px; font-weight:bold;">Gravatars for logins at common email providers:</div><div style="border: 1px solid #ddd;"><table class="table">';
+    all += grall;
     all += '</table></div>';
     document.getElementById("namint_result").innerHTML = all;
   } 
