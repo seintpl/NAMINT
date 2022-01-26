@@ -58,7 +58,7 @@ function mashup() {
       q[2] = f.substr(0,1) + '. ' + m.substr(0,1) + '. ' + l;
       q[3] = l + ' ' + f + ' ' + m;
       q[4] = l + ' ' + f.substr(0,1) + '. ' + m.substr(0,1) + '.';
-      q[5] = m + ' ' + l
+      q[5] = m + ' ' + l;
       q.forEach(addname);
       q.forEach(forname);
     }
@@ -85,6 +85,7 @@ function mashup() {
       s[4] = l.toLowerCase() + f.substr(0,1).toLowerCase() + m.substr(0,1).toLowerCase();
       s[5] = m.toLowerCase() + l.toLowerCase();
       s[6] = l.toLowerCase() + m.toLowerCase();
+      s[7] = m.toLowerCase();
       s.forEach(addlogin);
     }  
     all += '</table></div><div style="padding-top: 10px; font-weight:bold;">Gravatars for logins at common email providers:</div><div style="border: 1px solid #ddd;"><table class="table">';
