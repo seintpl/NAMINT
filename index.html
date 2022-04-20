@@ -32,22 +32,46 @@
       <div class="row justify-content-md-center" style="padding-top: 20px;">
       <h1 class="mt-5">NAMINT</h1>
          <div class="row justify-content-md-center">
-         <label for="yturlinput" class="form-label">Enter first, middle (or nickname) and last name, and press Go! to see possible search patterns and links.</label>
-         <div class="col-auto">
-            <input type="text" class="form-control" id="first" name="first" aria-describedby="first" placeholder="first" required>
+           <label class="form-label">Enter first, middle (or nickname) and last name, and press Go! to see possible search patterns and links.</label>
+           <div class="col-auto">
+              <input type="text" class="form-control" id="first" name="first" aria-describedby="first" placeholder="first" required>
+           </div>
+           <div class="col-auto">
+              <input type="text" class="form-control" id="middle" name="middle" aria-describedby="middle" placeholder="middle / nickname">
+           </div>
+           <div class="col-auto">
+              <input type="text" class="form-control" id="last" name="last" aria-describedby="last" placeholder="last" required>
+           </div>
+           <div class="col-auto">
+              <button class="btn btn-success" onclick="mashup()">Go!</button>
+           </div>   
          </div>
-         <div class="col-auto">
-            <input type="text" class="form-control" id="middle" name="middle" aria-describedby="middle" placeholder="middle / nickname">
+         <div>
+           <a class="btn btn-outline-primary btn-sm my-2" data-bs-toggle="collapse" href="#coldom" role="button" aria-expanded="false" aria-controls="coldom">
+             Click here to change default email domains for searching avatars
+           </a>
          </div>
-         <div class="col-auto">
-            <input type="text" class="form-control" id="last" name="last" aria-describedby="last" placeholder="last" required>
-         </div>
-         <div class="col-auto">
-            <button class="btn btn-success" onclick="mashup()">Go!</button>
-         </div>   
+         <div class="collapse" id="coldom">
+           <div class="row justify-content-md-center border border-primary py-1">
+             <div class="col-auto">
+                <input type="text" class="form-control form-control-sm" id="dom1" name="dom1" aria-describedby="domain 1" placeholder="domain 1" value="icloud.com" required>
+             </div>
+             <div class="col-auto">
+                <input type="text" class="form-control form-control-sm" id="dom2" name="dom2" aria-describedby="domain 2" placeholder="domain 2" value="yahoo.com" required>
+             </div>
+             <div class="col-auto">
+                <input type="text" class="form-control form-control-sm" id="dom3" name="dom3" aria-describedby="domain 3" placeholder="domain 3" value="hotmail.com" required>
+             </div>
+             <div class="col-auto">
+                <input type="text" class="form-control form-control-sm" id="dom4" name="dom4" aria-describedby="domain 4" placeholder="domain 4" value="msn.com" required>
+             </div>
+             <div class="col-auto">
+                <button class="btn btn-warning btn-sm" onclick="domdefault()">Back to defaults</button>
+             </div>           
+           </div>
          </div>
       </div>
-      <div class="row justify-content-md-center" style="padding-top: 10px;" id="namint_result"></div>
+      <div class="row justify-content-md-center pt-2" id="namint_result"></div>
     </div>
   </main>
   
@@ -59,6 +83,7 @@
   </footer>
   <script src="md5.min.js"></script>
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
       
   </body>
 </html>
