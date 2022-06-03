@@ -72,9 +72,10 @@ function mashup() {
     if (m.length>0) {
       q[1] = f + ' ' + m + ' ' + l;
       q[2] = f.substr(0,1) + '. ' + m.substr(0,1) + '. ' + l;
-      q[3] = l + ' ' + f + ' ' + m;
-      q[4] = l + ' ' + f.substr(0,1) + '. ' + m.substr(0,1) + '.';
-      q[5] = m + ' ' + l;
+      q[3] = f + ' ' + m.substr(0,1) + '. ' + l;
+      q[4] = l + ' ' + f + ' ' + m;
+      q[5] = l + ' ' + f.substr(0,1) + '. ' + m.substr(0,1) + '.';
+      q[6] = m + ' ' + l;
       q.forEach(addname);
       q.forEach(forname);
     }
@@ -103,11 +104,12 @@ function mashup() {
     if (m.length>0) {
       s[1] = f.toLowerCase() + m.toLowerCase() + l.toLowerCase();
       s[2] = l.toLowerCase() + f.toLowerCase() + m.toLowerCase();
-      s[3] = f.substr(0,1).toLowerCase() + m.substr(0,1).toLowerCase() + l.toLowerCase();
-      s[4] = l.toLowerCase() + f.substr(0,1).toLowerCase() + m.substr(0,1).toLowerCase();
-      s[5] = m.toLowerCase() + l.toLowerCase();
-      s[6] = l.toLowerCase() + m.toLowerCase();
-      s[7] = m.toLowerCase();
+      s[3] = f.toLowerCase() + m.substr(0,1).toLowerCase() + l.toLowerCase();
+      s[4] = f.substr(0,1).toLowerCase() + m.substr(0,1).toLowerCase() + l.toLowerCase();
+      s[5] = l.toLowerCase() + f.substr(0,1).toLowerCase() + m.substr(0,1).toLowerCase();
+      s[6] = m.toLowerCase() + l.toLowerCase();
+      s[7] = l.toLowerCase() + m.toLowerCase();
+      s[8] = m.toLowerCase();
       s.forEach(addlogin);
     }  
     all += '</table></div><div style="padding-top: 10px; font-weight:bold;">Gravatars for logins at different email providers:</div><div style="border: 1px solid #ddd;"><table class="table">';
