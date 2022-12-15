@@ -12,15 +12,20 @@ function forname(value) {
   orname += '"' + value + '"';
 }
 
+function emtools(value) {
+  return '<a href=\'https://epieos.com/?q=' + value + '\' target=_blank>Epieos</a><br /><a href=\'https://www.google.pl/search?q="' + value + '"\' target=_blank><i class="bi-google"></i><i class="bi bi-list-columns-reverse"></i></a> / <a href=\'https://www.google.pl/search?q="' + value + '"&tbm=isch\' target=_blank><i class="bi-google"></i><i class="bi bi-person-square"></i></a><br /><a href=\'https://www.bing.com/search?q="' + value + '"\' target=_blank>Bing</a> / <a href=\'https://yandex.com/search/?text="' + value + '"\' target=_blank>Yandex</a>';
+}
+
 function addlogin(value) {
-  all += '<tr><td style="width: 35%;">' + value + '</td><td><a href=\'https://www.google.pl/search?q="' + value + '"\' target=_blank>Google</a></td><td><a href=\'https://www.bing.com/search?q="' + value + '"\' target=_blank>Bing</a></td><td><a href=\'https://yandex.com/search/?text="' + value + '"\' target=_blank>Yandex</a></td><td><a href=\'https://www.google.pl/search?q="' + value + '@gmail.com"+OR+"' + value + '@outlook.com"+OR+"' + value + '@icloud.com"+OR+"' + value + '@yahoo.com"+OR+"' + value + '@protonmail.com"\' target=_blank><i class="bi-google"></i> common emails</a></td><td><a href=\'https://www.facebook.com/' + value + '\' target=_blank><i class="bi-facebook"></i></a></td><td><a href=\'https://twitter.com/' + value + '\' target=_blank><i class="bi-twitter"></i></a></td><td><a href=\'https://instagram.com/' + value + '\' target=_blank><i class="bi-instagram"></i></a></td><td><a href=\'https://www.tiktok.com/@' + value + '\' target=_blank><i class="bi-tiktok"></i></a></td><td><a href=\'https://www.twitch.tv/' + value + '\' target=_blank><i class="bi-twitch"></i></a></td><td><a href=\'https://whatsmyname.app/?q=' + value + '\' target=_blank>whatsmyname</a></td></tr>';
+  all += '<tr><td style="width: 35%;">' + value + '</td><td><a href=\'https://www.google.pl/search?q="' + value + '"\' target=_blank>Google</a></td><td><a href=\'https://www.bing.com/search?q="' + value + '"\' target=_blank>Bing</a></td><td><a href=\'https://yandex.com/search/?text="' + value + '"\' target=_blank>Yandex</a></td><td><a href=\'https://www.google.pl/search?q="' + value + '@gmail.com"+OR+"' + value + '@outlook.com"+OR+"' + value + '@icloud.com"+OR+"' + value + '@yahoo.com"+OR+"' + value + '@protonmail.com"\' target=_blank><i class="bi-google"></i> common emails</a></td><td><a href=\'https://www.facebook.com/' + value + '\' target=_blank><i class="bi-facebook"></i></a></td><td><a href=\'https://twitter.com/' + value + '\' target=_blank><i class="bi-twitter"></i></a></td><td><a href=\'https://instagram.com/' + value + '\' target=_blank><i class="bi-instagram"></i></a></td><td><a href=\'https://www.tiktok.com/@' + value + '\' target=_blank><i class="bi-tiktok"></i></a></td><td><a href=\'https://www.twitch.tv/' + value + '\' target=_blank><i class="bi-twitch"></i></a></td><td><a href=\'https://seintpl.github.io/imagstodon/?u=' + value + '\' target=_blank><i class="bi bi-mastodon"></i></a></td><td><a href=\'https://whatsmyname.app/?q=' + value + '\' target=_blank>whatsmyname</a></td></tr>';
   vg = value + '@gmail.com';
   vo = value + '@outlook.com';
   vi = value + '@' + dom1;
   vy = value + '@' + dom2;
   vh = value + '@' + dom3;
   vm = value + '@' + dom4;
-  grall += '<tr><td style="width: 35%;">' + value + '</td><td><img src="https://s.gravatar.com/avatar/' + md5(vg) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vo) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vi) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vy) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vh) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vm) + '"></td></tr>';
+  emall += '<tr><td style="width: 35%; vertical-align: middle;">' + value + '</td><td>' + emtools(vg) + '</td><td>' + emtools(vo) + '</td><td>' + emtools(vi) + '</td><td>' + emtools(vy) + '</td><td>' + emtools(vh) + '</td><td>' + emtools(vm) + '</td></tr>';
+  grall += '<tr><td style="width: 35%; vertical-align: middle;">' + value + '</td><td><img src="https://s.gravatar.com/avatar/' + md5(vg) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vo) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vi) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vy) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vh) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vm) + '"></td></tr>';
 }
 
 function openallfb(a) {
@@ -54,7 +59,7 @@ function mashup() {
   if (f==''||l=='') {document.getElementById("namint_result").innerHTML = '<div style="padding-top: 10px; font-weight:bold;">Enter at least first and last name above.</div>';}
   else {
     all = '<div style="padding-top: 10px; font-weight:bold;">Possible name patterns and search links:</div><div style="border: 1px solid #ddd;"><table class="table">';
-    grall = '<tr><td>@</td><td>gmail.com</td><td>outlook.com</td><td>' + dom1 + '</td><td>' + dom2 + '</td><td>' + dom3 + '</td><td>' + dom4 + '</td></tr>';
+    grall = emall = '<tr><td>@</td><td>gmail.com</td><td>outlook.com</td><td>' + dom1 + '</td><td>' + dom2 + '</td><td>' + dom3 + '</td><td>' + dom4 + '</td></tr>';
     orname = '';
     ornum = 0;
     linum = 0;
@@ -101,8 +106,12 @@ function mashup() {
     r[8] = l.toLowerCase() + f.substr(0,1).toLowerCase();
     r[9] = f.toLowerCase() + l.substr(0,1).toLowerCase();
     r[10] = f.toLowerCase() + '.' + l.substr(0,1).toLowerCase();
-    r[11] = f.toLowerCase();
-    r[12] = l.toLowerCase();    
+    r[11] = f.toLowerCase() + '_' + l.toLowerCase();
+    r[12] = l.toLowerCase() + '_' + f.toLowerCase();
+    r[13] = f.substr(0,1).toLowerCase() + '_' + l.toLowerCase();
+    r[14] = l.toLowerCase() + '_' + f.substr(0,1).toLowerCase();
+    r[15] = f.toLowerCase();
+    r[16] = l.toLowerCase();    
     r.forEach(addlogin);
     if (m.length>0) {
       s[1] = f.toLowerCase() + m.toLowerCase() + l.toLowerCase();
@@ -115,6 +124,8 @@ function mashup() {
       s[8] = m.toLowerCase();
       s.forEach(addlogin);
     }  
+    all += '</table></div><div style="padding-top: 10px; font-weight:bold;">Search tools for emails:</div><div style="border: 1px solid #ddd;"><table class="table">';
+    all += emall;
     all += '</table></div><div style="padding-top: 10px; font-weight:bold;">Gravatars for logins at different email providers:</div><div style="border: 1px solid #ddd;"><table class="table">';
     all += grall;
     all += '</table></div>';
