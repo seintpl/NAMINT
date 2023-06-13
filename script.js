@@ -26,6 +26,7 @@ function addlogin(value) {
   vm = value + '@' + dom4;
   emall += '<tr><td style="width: 35%; vertical-align: middle;">' + value + '</td><td>' + emtools(vg) + '</td><td>' + emtools(vo) + '</td><td>' + emtools(vi) + '</td><td>' + emtools(vy) + '</td><td>' + emtools(vh) + '</td><td>' + emtools(vm) + '</td></tr>';
   grall += '<tr><td style="width: 35%; vertical-align: middle;">' + value + '</td><td><img src="https://s.gravatar.com/avatar/' + md5(vg) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vo) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vi) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vy) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vh) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vm) + '"></td></tr>';
+  permall += '<tr><td>' + vg + '</td></tr><tr><td>' + vo + '</td></tr><tr><td>' + vi + '</td></tr><tr><td>' + vy + '</td></tr><tr><td>' + vh + '</td></tr><tr><td>' + vm + '</td></tr><tr></tr>';
 }
 
 function openallfb(a) {
@@ -52,15 +53,16 @@ function mashup() {
   f = document.getElementById("first").value;
   m = document.getElementById("middle").value;
   l = document.getElementById("last").value;
+  n = document.getElementById("num").value;
   dom1 = encodeURI(document.getElementById("dom1").value);
   dom2 = encodeURI(document.getElementById("dom2").value);
   dom3 = encodeURI(document.getElementById("dom3").value);
   dom4 = encodeURI(document.getElementById("dom4").value);
   if (f==''||l=='') {document.getElementById("namint_result").innerHTML = '<div style="padding-top: 10px; font-weight:bold;">Enter at least first and last name above.</div>';}
   else {
-    all = '<div style="padding-top: 10px; font-weight:bold;">Possible name patterns and search links:</div><div style="border: 1px solid #ddd;"><table class="table">';
+    all = '<div>Jump to: <a class="btn btn-outline-success btn-sm" href="#login">login patterns</a> <a class="btn btn-outline-success btn-sm" href="#email">email search tools</a> <a class="btn btn-outline-success btn-sm" href="#gravatar">gravatar search</a> <a class="btn btn-outline-success btn-sm" href="#permutator">email permutator</a></div><div style="padding-top: 10px; font-weight:bold;">Possible name patterns and search links:</div><div style="border: 1px solid #ddd;"><table class="table">';
     grall = emall = '<tr><td>@</td><td>gmail.com</td><td>outlook.com</td><td>' + dom1 + '</td><td>' + dom2 + '</td><td>' + dom3 + '</td><td>' + dom4 + '</td></tr>';
-    orname = '';
+    orname = permall = '';
     ornum = 0;
     linum = 0;
     const p = [];
@@ -95,7 +97,7 @@ function mashup() {
     all += '" alt="Search name on Flickr" title="Search names on Flickr"><i class="bi-camera2"></i></a></td><td><a href=# onclick="';
     p.forEach(openallvk);
     all += '">vk</a></td><td><a href=\'https://www.google.pl/search?q=' + orname + ' site:pastebin.com\' target=_blank alt="Search names on pastebin" title="Search names on pastebin"><i class="bi bi-file-earmark-binary"></i></a></td></tr>';
-    all += '</table></div><div style="padding-top: 10px; font-weight:bold;">Possible login patterns and search links:</div><div style="border: 1px solid #ddd;"><table class="table">';
+    all += '</table><a id="login"></div><div style="padding-top: 10px; font-weight:bold;">Possible login patterns and search links:</div><div style="border: 1px solid #ddd;"><table class="table">';
     r[1] = f.toLowerCase() + '.' + l.toLowerCase();
     r[2] = l.toLowerCase() + '.' + f.toLowerCase();
     r[3] = f.substr(0,1).toLowerCase() + '.' + l.toLowerCase();
@@ -108,10 +110,36 @@ function mashup() {
     r[10] = f.toLowerCase() + '.' + l.substr(0,1).toLowerCase();
     r[11] = f.toLowerCase() + '_' + l.toLowerCase();
     r[12] = l.toLowerCase() + '_' + f.toLowerCase();
-    r[13] = f.substr(0,1).toLowerCase() + '_' + l.toLowerCase();
-    r[14] = l.toLowerCase() + '_' + f.substr(0,1).toLowerCase();
-    r[15] = f.toLowerCase();
-    r[16] = l.toLowerCase();    
+    r[13] = f.toLowerCase() + '-' + l.toLowerCase();
+    r[14] = l.toLowerCase() + '-' + f.toLowerCase();
+    r[15] = f.substr(0,1).toLowerCase() + '_' + l.toLowerCase();
+    r[16] = l.toLowerCase() + '_' + f.substr(0,1).toLowerCase();
+    r[17] = f.substr(0,1).toLowerCase() + '-' + l.toLowerCase();
+    r[18] = l.toLowerCase() + '-' + f.substr(0,1).toLowerCase();
+    r[19] = f.toLowerCase();
+    r[20] = l.toLowerCase();
+    if (n.length>0) {
+      r[21] = f.toLowerCase() + '.' + l.toLowerCase() + n;
+      r[22] = l.toLowerCase() + '.' + f.toLowerCase() + n;
+      r[23] = f.substr(0,1).toLowerCase() + '.' + l.toLowerCase() + n;
+      r[24] = l.toLowerCase() + '.' + f.substr(0,1).toLowerCase() + n;
+      r[25] = f.toLowerCase() + l.toLowerCase() + n;
+      r[26] = l.toLowerCase() + f.toLowerCase() + n;
+      r[27] = f.substr(0,1).toLowerCase() + l.toLowerCase() + n;
+      r[28] = l.toLowerCase() + f.substr(0,1).toLowerCase() + n;
+      r[29] = f.toLowerCase() + l.substr(0,1).toLowerCase() + n;
+      r[30] = f.toLowerCase() + '.' + l.substr(0,1).toLowerCase() + n;
+      r[31] = f.toLowerCase() + '_' + l.toLowerCase() + n;
+      r[32] = l.toLowerCase() + '_' + f.toLowerCase() + n;
+      r[33] = f.toLowerCase() + '-' + l.toLowerCase() + n;
+      r[34] = l.toLowerCase() + '-' + f.toLowerCase() + n;
+      r[35] = f.substr(0,1).toLowerCase() + '_' + l.toLowerCase() + n;
+      r[36] = l.toLowerCase() + '_' + f.substr(0,1).toLowerCase() + n;
+      r[37] = f.substr(0,1).toLowerCase() + '-' + l.toLowerCase() + n;
+      r[38] = l.toLowerCase() + '-' + f.substr(0,1).toLowerCase() + n;
+      r[39] = f.toLowerCase() + n;
+      r[40] = l.toLowerCase() + n;
+    }    
     r.forEach(addlogin);
     if (m.length>0) {
       s[1] = f.toLowerCase() + m.toLowerCase() + l.toLowerCase();
@@ -122,12 +150,24 @@ function mashup() {
       s[6] = m.toLowerCase() + l.toLowerCase();
       s[7] = l.toLowerCase() + m.toLowerCase();
       s[8] = m.toLowerCase();
+      if (n.length>0) {
+        s[9] = f.toLowerCase() + m.toLowerCase() + l.toLowerCase() + n;
+        s[10] = l.toLowerCase() + f.toLowerCase() + m.toLowerCase() + n;
+        s[11] = f.toLowerCase() + m.substr(0,1).toLowerCase() + l.toLowerCase() + n;
+        s[12] = f.substr(0,1).toLowerCase() + m.substr(0,1).toLowerCase() + l.toLowerCase() + n;
+        s[13] = l.toLowerCase() + f.substr(0,1).toLowerCase() + m.substr(0,1).toLowerCase() + n;
+        s[14] = m.toLowerCase() + l.toLowerCase() + n;
+        s[15] = l.toLowerCase() + m.toLowerCase() + n;
+        s[16] = m.toLowerCase() + n;     
+      }
       s.forEach(addlogin);
     }  
-    all += '</table></div><div style="padding-top: 10px; font-weight:bold;">Search tools for emails:</div><div style="border: 1px solid #ddd;"><table class="table">';
+    all += '</table><a id="email"></div><div style="padding-top: 10px; font-weight:bold;">Search tools for emails:</div><div style="border: 1px solid #ddd;"><table class="table">';
     all += emall;
-    all += '</table></div><div style="padding-top: 10px; font-weight:bold;">Gravatars for logins at different email providers:</div><div style="border: 1px solid #ddd;"><table class="table">';
+    all += '</table><a id="gravatar"></div><div style="padding-top: 10px; font-weight:bold;">Gravatars for logins at different email providers:</div><div style="border: 1px solid #ddd;"><table class="table">';
     all += grall;
+    all += '</table><a id="permutator"></div><div style="padding-top: 10px; font-weight:bold;">Email permutator:</div><div style="border: 1px solid #ddd;"><table class="table">';
+    all += permall;
     all += '</table></div>';
     document.getElementById("namint_result").innerHTML = all;
   } 

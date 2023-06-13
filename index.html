@@ -32,7 +32,7 @@
       <div class="row justify-content-md-center" style="padding-top: 20px;">
       <h1 class="mt-5">NAMINT</h1>
          <div class="row justify-content-md-center">
-           <label class="form-label">Enter first, middle (or nickname) and last name, and press Go! to see possible search patterns and links.</label>
+           <label class="form-label">Enter first, middle (or nickname), last name, and year, and press Go! to see possible search patterns and links.</label>
            <div class="col-auto">
               <input type="text" class="form-control" id="first" name="first" aria-describedby="first" placeholder="first" required>
            </div>
@@ -43,12 +43,15 @@
               <input type="text" class="form-control" id="last" name="last" aria-describedby="last" placeholder="last" required>
            </div>
            <div class="col-auto">
+              <input type="text" class="form-control" id="num" name="num" aria-describedby="num" placeholder="number, eg. year" style="width: 150px;">
+           </div>
+           <div class="col-auto">
               <button class="btn btn-success" onclick="mashup()">Go!</button>
            </div>   
          </div>
          <div>
            <a class="btn btn-outline-primary btn-sm my-2" data-bs-toggle="collapse" href="#coldom" role="button" aria-expanded="false" aria-controls="coldom">
-             Click here to change default email domains for searching avatars
+             Click here to change default email domains for avatar search and email permutator
            </a>
          </div>
          <div class="collapse" id="coldom">
@@ -78,7 +81,7 @@
   <footer class="footer mt-auto py-3 bg-light">
     <div class="container">
       <div>The above tool is for educational purposes only. The author does not promote or encourage any illegal activities.<br>Using this tool for illegal activities is strictly prohibited. You are the one responsible for your actions.</div>
-      <span class="text-muted">&copy SEINT 2022</span>
+      <span class="text-muted">&copy SEINT 2022-2023</span>
     </div>
   </footer>
   <script src="md5.min.js"></script>
