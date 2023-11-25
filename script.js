@@ -26,6 +26,8 @@ function addlogin(value) {
   vm = value + '@' + dom4;
   emall += '<tr><td style="width: 35%; vertical-align: middle;">' + value + '</td><td>' + emtools(vg) + '</td><td>' + emtools(vo) + '</td><td>' + emtools(vi) + '</td><td>' + emtools(vy) + '</td><td>' + emtools(vh) + '</td><td>' + emtools(vm) + '</td></tr>';
   grall += '<tr><td style="width: 35%; vertical-align: middle;">' + value + '</td><td><img src="https://s.gravatar.com/avatar/' + md5(vg) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vo) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vi) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vy) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vh) + '"></td><td><img src="https://s.gravatar.com/avatar/' + md5(vm) + '"></td></tr>';
+  unloginall += '<tr><td style="width: 35%; vertical-align: middle;">' + value + '</td><td><img src="https://unavatar.io/' + value + '" style="width: 200px;"></td></tr>';
+  unemailall += '<tr><td style="width: 35%; vertical-align: middle;">' + value + '</td><td><img src="https://unavatar.io/' + vg + '" style="width: 100px;"></td><td><img src="https://unavatar.io/' + vo + '" style="width: 100px;"></td><td><img src="https://unavatar.io/' + vi + '" style="width: 100px;"></td><td><img src="https://unavatar.io/' + vy + '" style="width: 100px;"></td><td><img src="https://unavatar.io/' + vh + '" style="width: 100px;"></td><td><img src="https://unavatar.io/' + vm + '" style="width: 100px;"></td></tr>';
   permall += '<tr><td>' + vg + '</td></tr><tr><td>' + vo + '</td></tr><tr><td>' + vi + '</td></tr><tr><td>' + vy + '</td></tr><tr><td>' + vh + '</td></tr><tr><td>' + vm + '</td></tr><tr></tr>';
 }
 
@@ -60,8 +62,10 @@ function mashup() {
   dom4 = encodeURI(document.getElementById("dom4").value);
   if (f==''||l=='') {document.getElementById("namint_result").innerHTML = '<div style="padding-top: 10px; font-weight:bold;">Enter at least first and last name above.</div>';}
   else {
-    all = '<div>Jump to: <a class="btn btn-outline-success btn-sm" href="#login">login patterns</a> <a class="btn btn-outline-success btn-sm" href="#email">email search tools</a> <a class="btn btn-outline-success btn-sm" href="#gravatar">gravatar search</a> <a class="btn btn-outline-success btn-sm" href="#permutator">email permutator</a></div><div style="padding-top: 10px; font-weight:bold;">Possible name patterns and search links:</div><div style="border: 1px solid #ddd;"><table class="table">';
+    all = '<div>Jump to: <a class="btn btn-outline-success btn-sm" href="#login">login patterns</a> <a class="btn btn-outline-success btn-sm" href="#email">email search tools</a> <a class="btn btn-outline-success btn-sm" href="#gravatar">gravatar search</a> <a class="btn btn-outline-success btn-sm" href="#unavatarlogin">unavatar login search</a> <a class="btn btn-outline-success btn-sm" href="#unavataremail">unavatar email search</a> <a class="btn btn-outline-success btn-sm" href="#permutator">email permutator</a></div><div style="padding-top: 10px; font-weight:bold;">Possible name patterns and search links:</div><div style="border: 1px solid #ddd;"><table class="table">';
     grall = emall = '<tr><td>@</td><td>gmail.com</td><td>outlook.com</td><td>' + dom1 + '</td><td>' + dom2 + '</td><td>' + dom3 + '</td><td>' + dom4 + '</td></tr>';
+    unloginall = '<tr><td>username</td><td>possible avatar (retrieved through unavatar.io)</td></tr>';
+    unemailall = '<tr><td>@</td><td>gmail.com</td><td>outlook.com</td><td>' + dom1 + '</td><td>' + dom2 + '</td><td>' + dom3 + '</td><td>' + dom4 + '</td></tr>';
     orname = permall = '';
     ornum = 0;
     linum = 0;
@@ -166,6 +170,8 @@ function mashup() {
     all += emall;
     all += '</table><a id="gravatar"></div><div style="padding-top: 10px; font-weight:bold;">Gravatars for logins at different email providers:</div><div style="border: 1px solid #ddd;"><table class="table">';
     all += grall;
+    all += '</table><a id="unavatarlogin"></div><div style="padding-top: 10px; font-weight:bold;">Results from unavatar for logins:</div><div style="border: 1px solid #ddd;"><a class="btn btn-success btn-sm" onclick="document.getElementById(\'unlogin\').innerHTML = unloginall">Check unavatar for possible avatars by login</a><table class="table" id="unlogin"><br />To see possible avatars for logins from <a href="https://unavatar.io">unavatar.io</a>, please click the button below. Remember, unavatar has a limit of <b>300 avatars per 24h</b>, so use this option wisely. :)<br /><b>After clicking, give the page a couple seconds to load the avatars</b><br /> ":-)" avatar means unavatar hasn\'t found any avatar.<tr><td></td></tr>';
+    all += '</table><a id="unavataremail"></div><div style="padding-top: 10px; font-weight:bold;">Results from unavatar for emails:</div><div style="border: 1px solid #ddd;"><a class="btn btn-success btn-sm" onclick="document.getElementById(\'unemail\').innerHTML = unemailall">Check unavatar for possible avatars by email</a><table class="table" id="unemail"><br />To see possible avatars for emails from <a href="https://unavatar.io">unavatar.io</a>, please click the button below. Remember, unavatar has a limit of <b>300 avatars per 24h</b>, so use this option wisely. :)<br /><b>After clicking, give the page a couple seconds to load the avatars</b><br /> ":-)" avatar means unavatar hasn\'t found any avatar.<tr><td></td></tr>';
     all += '</table><a id="permutator"></div><div style="padding-top: 10px; font-weight:bold;">Email permutator:</div><div style="border: 1px solid #ddd;"><table class="table">';
     all += permall;
     all += '</table></div>';
