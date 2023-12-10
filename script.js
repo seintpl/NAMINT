@@ -13,7 +13,7 @@ function forname(value) {
 }
 
 function emtools(value) {
-  return '<a href=\'https://epieos.com/?q=' + value + '\' target=_blank>Epieos</a><br /><a href=\'https://www.google.pl/search?q="' + value + '"\' target=_blank><i class="bi-google"></i><i class="bi bi-list-columns-reverse"></i></a> / <a href=\'https://www.google.pl/search?q="' + value + '"&tbm=isch\' target=_blank><i class="bi-google"></i><i class="bi bi-person-square"></i></a><br /><a href=\'https://www.bing.com/search?q="' + value + '"\' target=_blank>Bing</a> / <a href=\'https://yandex.com/search/?text="' + value + '"\' target=_blank>Yandex</a>';
+  return '<a href=\'https://epieos.com/?q=' + value + '\' target=_blank>Epieos</a><br /><a href=\'https://predictasearch.com/?q=' + value + '\' target=_blank>Predicta Search</a><br /><a href=\'https://www.google.pl/search?q="' + value + '"\' target=_blank><i class="bi-google"></i><i class="bi bi-list-columns-reverse"></i></a> / <a href=\'https://www.google.pl/search?q="' + value + '"&tbm=isch\' target=_blank><i class="bi-google"></i><i class="bi bi-person-square"></i></a><br /><a href=\'https://www.bing.com/search?q="' + value + '"\' target=_blank>Bing</a> / <a href=\'https://yandex.com/search/?text="' + value + '"\' target=_blank>Yandex</a>';
 }
 
 function addlogin(value) {
