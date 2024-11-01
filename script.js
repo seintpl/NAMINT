@@ -1,3 +1,20 @@
+// setting the values of search fields baed on GET parameters
+const urlGetParams = new URLSearchParams(window.location.search);
+
+if (urlGetParams.has('f')) {
+  document.getElementById('first').value = urlGetParams.get('f');  
+}
+if (urlGetParams.has('m')) {
+  document.getElementById('middle').value = urlGetParams.get('m');  
+}
+if (urlGetParams.has('l')) {
+  document.getElementById('last').value = urlGetParams.get('l');  
+}
+if (urlGetParams.has('n')) {
+  document.getElementById('num').value = urlGetParams.get('n');  
+}
+
+// combination functions
 function addname(value) {
   all += '<tr><td style="width: 25%;">' + value + '</td><td><a href=\'https://www.google.pl/search?q="' + value + '"\' target=_blank><i class="bi-google"></i> name</a></td><td><a href=\'https://www.google.com/search?q="' + value + '"&tbs=itp%3Aface&tbm=isch\' target=_blank><i class="bi-google"></i> <i class="bi bi-person-square"></i></a></td><td><a href=\'https://www.google.pl/search?q="' + value + '"+AND+(%E2%9C%86+OR+%E2%98%8E+OR+%E2%98%8F+OR+%F0%9F%93%B1+OR+%F0%9F%93%9E)\' target=_blank><i class="bi-google"></i> <i class="bi bi-telephone-fill"></i></a></td><td><a href=\'https://www.google.pl/search?q="' + value + '"+AND+(%F0%9F%93%A7+OR+%F0%9F%93%A8+OR+%F0%9F%93%A9+OR+✉)\' target=_blank><i class="bi-google"></i> <i class="bi bi-envelope"></i></a></td><td><a href=\'https://www.google.com/maps/search/"' + value + '"\' target=_blank alt="Search name on Google maps" title="Search name on Google maps"><i class="bi-google"></i><i class="bi bi-map"></i></a></td><td><a href=\'https://www.google.pl/search?q="' + value + '"+ext:pdf\' target=_blank alt="Search name in pdfs with Google" title="Search name in pdfs with Google"><i class="bi-google"></i><i class="bi bi-filetype-pdf"></i></a></td><td><a href=\'https://www.google.pl/search?q="' + value + '"+ext:docx\' target=_blank alt="Search name in docx files with Google" title="Search name in docx files with Google"><i class="bi-google"></i><i class="bi bi-filetype-docx"></i></a></td><td><a href=\'https://www.google.pl/search?q="' + value + '"+ext:xlsx\' target=_blank alt="Search name in xlsx files with Google" title="Search name in xlsx files with Google"><i class="bi-google"></i><i class="bi bi-filetype-xlsx"></i></a></td><td><a href=\'https://www.bing.com/search?q="' + value + '"\' target=_blank>Bing</a></td><td><a href=\'https://yandex.com/search/?text="' + value + '"\' target=_blank>Yandex</a></td><td><a href=\'https://yandex.com/images/search?text="' + value + '"&type=face\' target=_blank>Y <i class="bi bi-person-square"></i></a></td><td><a href=\'https://www.facebook.com/public/' + value + '\' target=_blank><i class="bi-facebook"></i></a></td><td><a href=\'https://twitter.com/search?q=' + value + '&src=typed_query&f=user\' target=_blank><i class="bi-twitter"></i></a></td><td><a href=\'https://www.tiktok.com/search/user?q="' + value + '"\' target=_blank><i class="bi-tiktok"></i></a></td><td><a href=\'https://www.flickr.com/search/people/?username="' + value + '"\' target=_blank alt="Search name on Flickr" title="Search name on Flickr"><i class="bi-camera2"></i></a></td><td><a href=\'https://vk.com/search?c%5Bname%5D=1&c%5Bper_page%5D=40&c%5Bq%5D=' + value + '&c%5Bsection%5D=people\' target=_blank>vk</td><td>';
   if (linum==0) {
